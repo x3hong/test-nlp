@@ -1,0 +1,59 @@
+body, p, div {
+    margin: 0;
+    padding: 0;
+}
+#app {
+    background: url('./img/bj1.png') no-repeat;
+    background-size: cover;
+    
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.header {
+    color: #fff;
+    position: relative;
+}
+.header .right input {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top: 25px;
+}
+.header .right input::-webkit-input-placeholder { 
+    color: #fff; 
+    font-size: 20px;
+}
+.fs72 { font-size: 72px;}
+.fs30 { font-size: 30px;}
+.fs20 { font-size: 20px;}
+.bold { font-weight: bold;}
+.mt60 { margin-top: 60px;}
+.mt40 { margin-top: 40px;}
+.mb60 { margin-bottom: 60px;}
+.ml40 { margin-left: 40px;}
+.mr40 { margin-right: 40px;}
+
+.base-btn {
+    border-radius: 25px;
+    border: 1px solid #33F8FF;
+    padding: 15px 35px;
+    background: inherit;
+    color: #fff;
+}
+.overview {
+    color: #212222;
+    font-weight: bold;
+    font-size: 20px;
+    background: #33F8FF;
+}
+.content {
+    color: #fff;
+}
+.sub-header {
+    position: relative;
+}
+.sub-header .viewall {
+    
+}
