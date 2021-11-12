@@ -10,9 +10,9 @@
           <button class="base-btn bold fs20">Collections</button>
         </div>
       </div>
-      <div class="right">
+      <!-- <div class="right">
         <input class="base-btn search" placeholder="search address" />
-      </div>
+      </div> -->
     </section>
     <section class="content">
       <div class="sub-header">
@@ -43,19 +43,52 @@
               <p class="fs20">Pancake Bunnies</p>
               <p class="fs18">Flipsie Easter '21</p>
             </div>
-            <div class="bottom">
-              <div>Lowest price</div>
-              <div class="price">
-                <span>$18.98</span>
-                <span>0.0785</span>
-              </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="footer"></section>
-  </div>
+            </div>
+            </div>
+        </section>
+        <section class="content">
+            <div class="sub-header">
+                <h3 class="fs30">Hot Collections</h3>
+                <div class="base-btn viewall bold">View All&nbsp;&nbsp;&nbsp;></div>
+            </div>
+            <div class="product">
+                <div class="mb40 item" v-for="item in 6" :key="item">
+                    <img src="" alt="">
+                    <div class="info">
+                        <div class="left"></div>
+                        <div class="right hot fs24">
+                            <p>Pancake Squad</p>
+                            <p>968.0684</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sub-header">
+                <h3 class="fs30">Newest Arrivals </h3>
+                <div class="base-btn viewall bold">View All&nbsp;&nbsp;&nbsp;></div>
+            </div>
+            <div class="product">
+                <div class="mb40 item item2" v-for="item in 3" :key="item">
+                    <img src="" alt="">
+                    <div class="info2">
+                        <div class="newest fs24">
+                            <p class="fs20 mt10">Pancake Bunnies  </p>
+                            <p class="fs18 mt10">Flipsie Easter '21</p>
+                        </div>
+                        <div class="bottom">
+                            <div class="fs20">Lowest price</div>
+                            <div class="price">
+                                <span class="one fs20">$18.981</span>
+                                <span class="two fs20">0.0785</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="footer"></section>
+    </div>
 </template>
 
 <script>
@@ -65,6 +98,14 @@ export default {
   components: { NavHeader },
   props: {
     msg: String,
+  },
+  data() {
+    return {
+      isMobile: false
+    }
+  },
+  mounted() {
+    this.isMobile = /(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)  
   },
 };
 </script>
@@ -89,57 +130,37 @@ div {
 .header {
   color: #fff;
   position: relative;
+  padding-top: 56px;
 }
 .header .right input {
-  position: absolute;
-  right: 0;
-  top: 0;
-  margin-top: 25px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top: 25px;
 }
-.header .right input::-webkit-input-placeholder {
-  color: #fff;
-  font-size: 20px;
+.header .right input::-webkit-input-placeholder { 
+    color: #fff; 
+    font-size: 20px;
 }
-.fs72 {
-  font-size: 72px;
-}
-.fs30 {
-  font-size: 30px;
-}
-.fs20 {
-  font-size: 20px;
-}
-.fs18 {
-  font-size: 18px;
-}
-.fs24 {
-  font-size: 24px;
-}
-.bold {
-  font-weight: bold;
-}
-.mt60 {
-  margin-top: 60px;
-}
-.mt40 {
-  margin-top: 40px;
-}
-.mb40 {
-  margin-bottom: 40px !important;
-}
-.mb60 {
-  margin-bottom: 60px;
-}
-.ml40 {
-  margin-left: 40px;
-}
-.mr40 {
-  margin-right: 40px;
-}
+.fs72 { font-size: 72px;}
+.fs30 { font-size: 30px;}
+.fs20 { font-size: 20px;}
+.fs18 { font-size: 18px;}
+.fs24 { font-size: 24px;}
+.bold { font-weight: bold;}
+.mt60 { margin-top: 60px;}
+.mt40 { margin-top: 40px;}
+.mt30 { margin-top: 30px;}
+.mt20 { margin-top: 20px;}
+.mt10 { margin-top: 10px;}
+.mb40 { margin-bottom: 40px !important;}
+.mb60 { margin-bottom: 60px;}
+.ml40 { margin-left: 40px;}
+.mr40 { margin-right: 40px;}
 
 .base-btn {
   border-radius: 25px;
-  border: 1px solid #33f8ff;
+  border: 1px solid #33F8FF;
   padding: 15px 35px;
   background: inherit;
   color: #fff;
@@ -203,16 +224,37 @@ div {
   height: 330px;
   background: #ccc;
 }
-.content .item .info2 .bottom {
-  position: absolute;
-  bottom: 0;
-  height: 70px;
-  display: flex;
-  align-items: center;
-  border-top: 1px solid #2045c0;
-  width: 95%;
-  justify-content: space-between;
+.content .item .info2  {
+  .bottom {
+    position: absolute;
+    bottom: 0;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #2045C0;
+    width: 95%;
+    justify-content: space-between;
+    .price {
+      .one {
+        display: inline-block;
+        background: #3D3A99;
+        opacity: 0.4;
+        border-top-left-radius: 6px;
+        border-bottom-left-radius: 6px;
+        padding: 8px 15px;
+      }
+      .two {
+        display: inline-block;
+        background: #3D3A99;
+        border-top-right-radius: 6px;
+        border-bottom-right-radius: 6px;
+        padding: 8px 15px;
+      }
+    }
+  }
 }
+
+
 
 @media screen and (max-width: 1440px) {
   .container {
@@ -223,5 +265,8 @@ div {
   .container {
     max-width: 1600px;
   }
+}
+@media screen and (max-width: 800px) {
+  .fs72 { font-size: 60px;}
 }
 </style>

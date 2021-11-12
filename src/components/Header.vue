@@ -34,15 +34,15 @@ export default {
 </script>
 <style lang="less">
 .logo {
-  width: 30px;
-  height: 30px;
+  width: 60px;
+  height: 60px;
   border-radius: 100%;
   background: #000000;
   vertical-align: center;
   position: relative;
   .logo-img {
-    width: 17px;
-    height: 17px;
+    width: 36px;
+    height: 34px;
     display: inline-block;
     position: absolute;
     top: 50%;
@@ -64,7 +64,7 @@ export default {
   align-items: center;
   width: 100%;
   height: 56px;
-  background-color: #46369c;
+  // background-color: #46369c;
   border-bottom: 1px solid #46369c;
   z-index: 20;
   transform: translate3d(0px, 0px, 0px);
