@@ -1,5 +1,6 @@
 <template>
-  <div class="container">
+  <div>
+    <div class="container">
     <NavHeader />
     <section class="header">
       <div class="left">
@@ -10,9 +11,9 @@
           <button class="base-btn bold fs20">Collections</button>
         </div>
       </div>
-      <!-- <div class="right">
+      <div class="right">
         <input class="base-btn search" placeholder="search address" />
-      </div> -->
+      </div>
     </section>
     <section class="content">
       <div class="sub-header">
@@ -87,15 +88,17 @@
                 </div>
             </div>
         </section>
-        <section class="footer"></section>
+        </div>
+        <Footer class="footer" />
     </div>
 </template>
 
 <script>
 import NavHeader from "./Header.vue";
+import Footer from './Footer.vue'
 export default {
   name: "HelloWorld",
-  components: { NavHeader },
+  components: { NavHeader, Footer },
   props: {
     msg: String,
   },
@@ -118,9 +121,13 @@ div {
   margin: 0;
   padding: 0;
 }
+body {
+  background: #5825AD;
+}
 #app {
   background: url("../assets/bj1.png") no-repeat;
-  background-size: cover;
+  background-origin: center;
+  background-size: contain;
 }
 .container {
   margin: 0 auto;
@@ -130,12 +137,12 @@ div {
 .header {
   color: #fff;
   position: relative;
-  padding-top: 56px;
+  padding-top: 100px;
 }
 .header .right input {
     position: absolute;
     right: 0;
-    top: 0;
+    top: 100px;
     margin-top: 25px;
 }
 .header .right input::-webkit-input-placeholder { 
