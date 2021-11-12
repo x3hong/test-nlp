@@ -154,7 +154,7 @@ export default {
         width: 116px;
         height: 22px;
         font-size: 24px;
-        font-family: Arial Black;
+        // font-family: Arial Black;
         font-weight: 400;
         text-decoration: none;
         color: #ffffff;
@@ -177,7 +177,7 @@ export default {
         height: 29px;
         line-height: 29px;
         position: relative;
-        top: 4px;
+        top: 6px;
         .link {
           color: #33f8ff;
         }
@@ -193,7 +193,7 @@ export default {
         display: flex;
         -webkit-box-align: center;
         align-items: center;
-        color: rgb(122, 110, 170);
+        color: #fff;
         font-size: 16px;
         font-weight: 400;
         padding: 0px 16px;
