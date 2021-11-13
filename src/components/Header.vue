@@ -158,6 +158,7 @@ export default {
         font-weight: 400;
         text-decoration: none;
         color: #ffffff;
+        cursor: pointer;
       }
     }
 
@@ -180,12 +181,14 @@ export default {
         top: 6px;
         .link {
           color: #33f8ff;
+          cursor: pointer;
         }
       }
       &.nft {
         .link {
           height: 30px;
           width: 70px;
+          cursor: pointer;
         }
       }
       .link {
@@ -199,6 +202,7 @@ export default {
         padding: 0px 16px;
         text-decoration: none;
         height: 48px;
+        cursor: pointer;
       }
     }
   }

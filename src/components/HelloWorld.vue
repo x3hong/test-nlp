@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="page-wrap">
     <div class="container">
     <NavHeader />
     <section class="header">
@@ -15,81 +15,48 @@
         <input class="base-btn search" placeholder="search address" />
       </div>
     </section>
-    <section class="content">
+    <section class="content" style="margin-top: 50px;">
       <div class="sub-header">
-        <h3 class="fs30">Hot Collections</h3>
-        <div class="base-btn viewall">View All</div>
+          <h3 class="fs30">Hot Collections</h3>
+          <div class="base-btn viewall bold">View All&nbsp;&nbsp;&nbsp;></div>
       </div>
       <div class="product">
-        <div class="mb40 item" v-for="item in 6" :key="item">
-          <img src="" alt="" />
-          <div class="info">
-            <div class="left"></div>
-            <div class="right hot fs24">
-              <p>Pancake Squad</p>
-              <p>968.0684</p>
-            </div>
+          <div class="mb40 item" v-for="item in 8" :key="item">
+              <img src="" alt="">
+              <div class="info">
+                  <div class="left"></div>
+                  <div class="hot fs24">
+                      <p>Pancake Squad</p>
+                      <p>968.0684</p>
+                  </div>
+              </div>
           </div>
         </div>
-      </div>
-      <div class="sub-header">
-        <h3 class="fs30">Newest Arrivals</h3>
-        <div class="base-btn viewall">View All</div>
-      </div>
-      <div class="product">
-        <div class="mb40 item item2" v-for="item in 3" :key="item">
-          <img src="" alt="" />
-          <div class="info2">
-            <div class="newest fs24">
-              <p class="fs20">Pancake Bunnies</p>
-              <p class="fs18">Flipsie Easter '21</p>
-            </div>
-            </div>
-            </div>
-            </div>
-        </section>
-        <section class="content">
-            <div class="sub-header">
-                <h3 class="fs30">Hot Collections</h3>
-                <div class="base-btn viewall bold">View All&nbsp;&nbsp;&nbsp;></div>
-            </div>
-            <div class="product">
-                <div class="mb40 item" v-for="item in 6" :key="item">
-                    <img src="" alt="">
-                    <div class="info">
-                        <div class="left"></div>
-                        <div class="right hot fs24">
-                            <p>Pancake Squad</p>
-                            <p>968.0684</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="sub-header">
-                <h3 class="fs30">Newest Arrivals </h3>
-                <div class="base-btn viewall bold">View All&nbsp;&nbsp;&nbsp;></div>
-            </div>
-            <div class="product">
-                <div class="mb40 item item2" v-for="item in 3" :key="item">
-                    <img src="" alt="">
-                    <div class="info2">
-                        <div class="newest fs24">
-                            <p class="fs20 mt10">Pancake Bunnies  </p>
-                            <p class="fs18 mt10">Flipsie Easter '21</p>
-                        </div>
-                        <div class="bottom">
-                            <div class="fs20">Lowest price</div>
-                            <div class="price">
-                                <span class="one fs20">$18.981</span>
-                                <span class="two fs20">0.0785</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <div class="sub-header">
+          <h3 class="fs30">Newest Arrivals </h3>
+          <div class="base-btn viewall bold">View All&nbsp;&nbsp;&nbsp;></div>
         </div>
-        <Footer class="footer" />
+        <div class="product">
+          <div class="mb40 item item2" v-for="item in 4" :key="item">
+              <img src="" alt="">
+              <div class="info2">
+                  <div class="newest fs24 mb20">
+                      <p class="fs20 mt10">Pancake Bunnies  </p>
+                      <p class="fs18 mt10">Flipsie Easter '21</p>
+                  </div>
+                  <div class="bottom">
+                      <div class="fs20">Lowest price</div>
+                      <div class="price">
+                          <span class="one fs20">$18.981</span>
+                          <span class="two fs20">0.0785</span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <Footer class="footer" />
     </div>
 </template>
 
@@ -122,9 +89,9 @@ div {
   padding: 0;
 }
 body {
-  background: #5825AD;
+  background: #341A91;
 }
-#app {
+.page-wrap {
   background: url("../assets/bj1.png") no-repeat;
   background-origin: center;
   background-size: contain;
@@ -159,6 +126,7 @@ body {
 .mt40 { margin-top: 40px;}
 .mt30 { margin-top: 30px;}
 .mt20 { margin-top: 20px;}
+.mb20 {margin-bottom: 20px;}
 .mt10 { margin-top: 10px;}
 .mb40 { margin-bottom: 40px !important;}
 .mb60 { margin-bottom: 60px;}
@@ -171,6 +139,7 @@ body {
   padding: 15px 35px;
   background: inherit;
   color: #fff;
+  cursor: pointer;
 }
 .overview {
   color: #212222;
@@ -195,7 +164,7 @@ body {
 }
 .content .product .item {
   width: 380px;
-  height: 400px;
+  // height: 400px;
   margin: 0 auto;
   background: linear-gradient(60deg, #9670f6, #51aefe);
   border-radius: 20px;
@@ -203,7 +172,7 @@ body {
   box-sizing: border-box;
 }
 .content .product .item2 {
-  height: 520px;
+  // height: 520px;
   position: relative;
 }
 .content .item img {
@@ -228,13 +197,13 @@ body {
 }
 .content .item2 img {
   width: 360px;
-  height: 330px;
+  // height: 330px;
   background: #ccc;
 }
 .content .item .info2  {
   .bottom {
-    position: absolute;
-    bottom: 0;
+    // position: absolute;
+    // bottom: 0;
     height: 70px;
     display: flex;
     align-items: center;
@@ -266,6 +235,17 @@ body {
 @media screen and (max-width: 1440px) {
   .container {
     max-width: 1200px;
+    .fs72 { font-size: 48px;}
+    .fs30 { font-size: 24px;}
+    .fs20 { font-size: 14px;}
+    .fs18 { font-size: 12px;}
+    .fs24 { font-size: 20px;}
+    .content .product .item {
+      width: 280px;
+      img {
+        width: 98%;
+      }
+    }
   }
 }
 @media screen and (min-width: 1920px) {
