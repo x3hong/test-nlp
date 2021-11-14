@@ -3,37 +3,55 @@
     <div class="content">
       <div class="block">
         <p class="head"><span class="line"></span> ABOUT</p>
-        <p>Contact</p>
-        <p>Brand</p>
-        <p>Blog</p>
+        <p style="cursor: pointer;" @click="openContact">Contact</p>
+        <!-- <p>Brand</p>
+        <p>Blog</p> -->
       </div>
       <div class="block">
         <p class="head"><span class="line"></span>HELP</p>
-        <p>Customer Support</p>
+        <!-- <p>Customer Support</p>
         <p>Troubleshooting</p>
-        <p>Guides</p>
+        <p>Guides</p> -->
       </div>
       <div class="block">
         <p class="head"><span class="line"></span>DEVELOPERS</p>
-        <p>Github</p>
-        <p>Documentation</p>
-        <p>Bug Bounty</p>
+        <p style="cursor: pointer;" @click="openGithub">Github</p>
+        <!-- <p>Documentation</p>
+        <p>Bug Bounty</p> -->
       </div>
-      <div>
-        <img src="../assets/telegram.png" alt="telegram" style="margin-right:50px;">
-        <img src="../assets/twitter.png" alt="twitter">
+      <div class="social">
+        <img src="../assets/telegram.png" alt="telegram" style="margin-right:50px;" @click="openTelegram">
+        <img src="../assets/twitter.png" alt="twitter" @click="openTwitter">
       </div>
     </div>
   </div>
 </template>
 <script>
-export default {};
+import { openTelegram, openTwitter, openContact, openGithub } from '../util'
+export default {
+  data() {
+    return {
+      openTelegram,
+      openTwitter,
+      openContact,
+      openGithub
+    }
+  }
+};
 </script>
 
 <style lang="less">
 .footer {
+  // position: fixed;
+  // bottom: 0px;
+  // left: 0;
+  // right: 0;
+  width:100%;
   background-color: #2D167E;
   color: #fff;
+  .social {
+    cursor: pointer;
+  }
   .content {
     display: flex;
     flex-direction: row;
@@ -61,16 +79,16 @@ export default {};
     }
   }
 }
-@media screen and (max-width: 1440px) {
-  .footer .content {
-    max-width: 1200px;
-  }
-}
-@media screen and (min-width: 1920px) {
-  .footer .content {
-    max-width: 1600px;
-  }
-}
+// @media screen and (max-width: 1440px) {
+//   .footer .content {
+//     max-width: 1200px;
+//   }
+// }
+// @media screen and (min-width: 1920px) {
+//   .footer .content {
+//     max-width: 1600px;
+//   }
+// }
 @media screen and (max-width: 800px) {
   .fs72 { font-size: 60px;}
 }

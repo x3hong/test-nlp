@@ -1,5 +1,8 @@
 <template>
-  <router-view />
+  <div id="#app">
+    <router-view />
+  </div>
+  
 </template>
 
 <script>
@@ -9,4 +12,8 @@ export default {
 </script>
 
 <style>
+#app {
+  min-width: 1440px;
+  overflow-x: hidden;
+}
 </style>

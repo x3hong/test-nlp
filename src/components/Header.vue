@@ -1,48 +1,67 @@
 <template>
   <div class="nav" :class="{ active: !isTop }">
-    <div class="logo">
+    <div class="logo" @click="gotoHome" :class="{hide: isUseInWEbsite}">
       <img src="../assets/logo.png" alt="" class="logo-img" />
     </div>
-    <div class="list">
+    <div class="list" :class="{hide: isUseInWEbsite}">
       <div class="item bigger">
-        <a href="/" class="link">Treasury</a>
+        <router-link to="/Home" class="link">Treasury</router-link>
       </div>
       <div class="item">
-        <a href="/" class="link">Trade</a>
+        <router-link to="/Coming" class="link">Trade</router-link>
       </div>
       <div class="item">
-        <a href="/" class="link">Win</a>
+        <router-link to="/Coming" class="link">Win</router-link>
       </div>
       <div class="item">
-        <a href="/" class="link">Earn</a>
+        <router-link to="/Coming" class="link">Earn</router-link>
+      </div>
+      <div class="item">
+        <router-link to="/Offcial" class="link">website</router-link>
       </div>
       <div class="item nft">
         <div class="p">
-          <a href="/" class="link">NFT</a>
+          <router-link to="/NFT" class="link">NFT</router-link>
         </div>
       </div>
     </div>
     <div class="right">
-      <div class="walet">
+      <!-- <div class="walet">
         <i class="icon"></i>
         <span class="money">$18.814</span>
       </div>
       <div class="earth"></div>
-      <div class="setting"></div>
-      <div class="contact">Connect Wallet</div>
+      <div class="setting"></div> -->
+      <template v-if="isUseInWEbsite">
+        <div class="alink" @click="openTelegram">telegram</div>
+        <div class="alink" @click="openTwitter">Twitter</div>
+        <div class="alink" @click="openPaper">whitepaper</div>
+        <div class="alink">Audit</div>
+      </template>
+      <div v-if="!isUseInWEbsite" class="contact">Connect Wallet</div>
+      <!-- telegram Twitter whitepaper Audit -->
     </div>
   </div>
 </template>
 <script>
+import { openTelegram, openTwitter} from '../util'
 export default {
   name: "Nav",
   props: {
     msg: String,
+    from: String
   },
   data() {
     return {
       isTop: true,
+      openTelegram,
+      openTwitter
     };
+  },
+  computed: {
+    isUseInWEbsite() {
+      return this.from === 'website'
+    }
   },
   mounted() {
     document.addEventListener("scroll", () => {
@@ -55,9 +74,22 @@ export default {
       }
     });
   },
+  methods: {
+    gotoHome() {
+      this.$router.push({
+        path: '/Home'
+      })
+    },
+    openPaper() {
+      window.open('whitepaper.pdf', '_blank')
+    },
+  },
 };
 </script>
 <style lang="less">
+.hide {
+  opacity: 0;
+}
 .right {
   display: flex;
   margin-right: 30px;
@@ -69,6 +101,13 @@ export default {
     border-radius: 50%;
     display: inline-block;
     background: url(../assets/setting.png) 100% 100%;
+  }
+  .alink {
+    color: white;
+    font-size: 20px;
+    padding: 0 8px;
+    cursor: pointer;
+    line-height: 50px;
   }
   .money,
   .earth {
@@ -113,23 +152,21 @@ export default {
   height: 60px;
   border-radius: 100%;
   background: #000000;
-  vertical-align: center;
-  position: relative;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
   margin-left: 30px;
   .logo-img {
     width: 36px;
-    height: 34px;
+    height: 40px;
     display: inline-block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin-top: 10px;
   }
 }
 
 .nav {
-  padding-top: 14px;
+  padding: 10px 0px;
   position: fixed;
   top: 0px;
   left: 0px;
