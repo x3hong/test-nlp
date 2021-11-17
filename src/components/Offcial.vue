@@ -85,7 +85,7 @@
                     <el-col :offset="14" class="colcontainer" style="padding-top: 50px;">
                         <div>
                             <img src="../assets/3_1.png" class="mb10" alt="">
-                            <div class="fs24 bold mb10">Website Launch</div>
+                            <div class="fs24 bold mb10">presale</div>
                             <!-- <div class="fs18">We are introducing the first ever Horse racing bet game on Binance Smart Chain. Bet and have the chance of winning BNB. Players must hold Royal BET $RBET to participate in betting.</div> -->
                             <div class="fs18">
                                 <p>Telegram Members</p>
@@ -125,7 +125,7 @@
                     <el-col :offset="3">
                         <div>
                             <p class="fs48">TOKENOMICS</p>
-                            <p class="fs20">PancakeSwap makes it easy to make your crypto work for you.</p>
+                            <p class="fs20">TreasurySwap makes it easy to make your crypto work for you.</p>
                             <div class="img-btn mt60">
                                 <img @click="openTelegram" src="../assets/bxl-telegram.png" class="mr60" alt="">
                                 <img @click="openTwitter" src="../assets/tuite.png" alt="">

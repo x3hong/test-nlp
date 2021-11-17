@@ -36,15 +36,15 @@
         <div class="alink" @click="openTelegram">telegram</div>
         <div class="alink" @click="openTwitter">Twitter</div>
         <div class="alink" @click="openPaper">whitepaper</div>
-        <div class="alink">Audit</div>
+        <div class="alink" @click="openAudit">Audit</div>
       </template>
-      <div v-if="!isUseInWEbsite" class="contact">Connect Wallet</div>
+      <div v-if="!isUseInWEbsite" class="contact" @click="connectWallet">Connect Wallet</div>
       <!-- telegram Twitter whitepaper Audit -->
     </div>
   </div>
 </template>
 <script>
-import { openTelegram, openTwitter} from '../util'
+import { openTelegram, openTwitter, getWeb3} from '../util'
 export default {
   name: "Nav",
   props: {
@@ -55,7 +55,8 @@ export default {
     return {
       isTop: true,
       openTelegram,
-      openTwitter
+      openTwitter,
+      ethAccount: ''
     };
   },
   computed: {
@@ -73,6 +74,7 @@ export default {
         this.isTop = true;
       }
     });
+    // InitWallet().then(res => {})
   },
   methods: {
     gotoHome() {
@@ -83,6 +85,17 @@ export default {
     openPaper() {
       window.open('whitepaper.pdf', '_blank')
     },
+    openAudit() {
+      window.open('Treasury_AuditReport_InterFi.pdf', '_blank')
+    },
+    connectWallet() {
+      getWeb3().then(async res => {
+        const web3 = res
+        const account = await web3.eth.getAccounts()
+        console.log('account info', account[0]);
+        this.ethAccount = account[0]
+      })
+    }
   },
 };
 </script>
@@ -145,6 +158,7 @@ export default {
     border-radius: 21px;
     position: relative;
     top: -7px;
+    cursor: pointer;
   }
 }
 .logo {
